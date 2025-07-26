@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhim Prakash Oli</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/site-icon.ico" />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0D47A1",
+              secondary: "#640D5F",
+              tertiary: "#465C88",
+            },
+            fontFamily: {
+              sans: ["Ubuntu", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <!-- overlay -->
+    <div
+      id="overlay"
+      class="hidden w-full h-[100svh] bg-black/80 fixed top-0"
+    ></div>
+    <!-- Navbar -->
+    <header
+      class="bg-primary text-white shadow shadow-black/30 sticky top-0 py-3 z-50"
+    >
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-0 justify-between font-medium text-md"
+        >
+          <div class="flex items-center gap-4">
+            <p class="text-sm">Follow Me</p>
+            <div
+              class="flex gap-2 bg-white text-primary text-sm rounded-full px-2 py-1"
+            >
+              <a
+                class=""
+                href="https://facebook.com/blanqui.auguste"
+                target="_blank"
+                style="color: #1877f2"
+                ><i class="fa-brands fa-facebook-f"></i></a
+              >&mid;
+              <a
+                class=""
+                href="https://www.linkedin.com/in/bhim-prakash-oli-ab48ba229/"
+                target="_blank"
+                style="color: #0077b5"
+                ><i class="fa-brands fa-linkedin-in"></i></a
+              >&mid;
+              <a
+                class=""
+                href="https://youtube.com/@vimpoli"
+                target="_blank"
+                style="color: #ff0000"
+                ><i class="fa-brands fa-youtube fa-spin"></i></a
+              >&mid;
+              <a
+                class=""
+                href="https://github.com/vimpoli"
+                target="_blank"
+                style="color: #171515"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+          <nav id="navbar" class="hidden md:block">
+            <ul
+              class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6"
+            >
+              <li>
+                <a class="hover:text-white/80 transition" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white/80 transition" href="notes.html"
+                  >Notes</a
+                >
+              </li>
+              <li
+                id="categoryToggle"
+                class="flex items-center gap-1 cursor-pointer relative top-0 hover:text-white/80 transition"
+              >
+                <span>Categories</span>
+                <span><i class="fa-solid fa-caret-down"></i></span>
+
+                <div
+                  id="categoryCard"
+                  class="hidden bg-white shadow-lg w-48 shadow-black/30 text-secondary p-4 absolute top-8 md:top-12 left-20 md:-left-4 rounded z-20"
+                >
+                  <ul class="flex flex-col gap-1 font-normal">
+                    <li>
+                      <a class="hover:text-primary transition" href=""
+                        >Category 1</a
+                      >
+                    </li>
+                    <li>
+                      <a class="hover:text-primary transition" href=""
+                        >Category 2</a
+                      >
+                    </li>
+                    <li>
+                      <a class="hover:text-primary transition" href=""
+                        >Category 3</a
+                      >
+                    </li>
+                    <li>
+                      <a class="hover:text-primary transition" href=""
+                        >Category 4</a
+                      >
+                    </li>
+                    <li>
+                      <a class="hover:text-primary transition" href="">
+                        National News</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="hover:text-white/80 transition" href="login.html"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <!-- Toggle Menu -->
+          <div
+            id="toggleBar"
+            class="px-2 py-1 text-primary bg-white hover:bg-secondary hover:text-white transition absolute right-4 top-2 rounded md:hidden"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span> Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span> Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span>Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span> Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span> Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-lg bg-tertiary/30 text-secondary">
+            <a href="https://olistore.netlify.app/">
+              <img
+                class="object-cover rounded-t-lg"
+                src="assets/images/projects/voting-app.png"
+                alt=""
+              />
+              <div class="p-4">
+                <h3
+                  class="text-lg tracking-wide md:text-xl lg:text-2xl hover:text-primary font-semibold text-center"
+                >
+                  पुँजीकोष अनुपात सम्बन्धी निर्देशन, समस्याग्रस्त घोषणा र सो
+                  सम्बन्धी कारबाहीहरू
+                </h3>
+              </div>
+            </a>
+            <div
+              class="px-4 flex justify-between gap-2 text-xs border-t py-4 text-gray-500"
+            >
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-user fa-sm"></i></span>
+                <span> Bhim Prakash Oli</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <a href="">
+                  <span><i class="fa-regular fa-comment"></i></span>
+                  <span>Comments</span>
+                </a>
+              </div>
+              <div class="flex items-center gap-1">
+                <span><i class="fa-regular fa-calendar-days fa-sm"></i></span>
+                <span>25 July, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-16 bg-tertiary">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 border-b pb-6 mb-4"
+        >
+          <div>
+            <h3 class="text-white text-2xl mb-4">Contact</h3>
+            <div class="px-2 py-4 rounded bg-white mb-4">
+              <div class="flex gap-4">
+                <div class="mb-2 text-red-600">
+                  <i class="far fa-envelope"></i>
+                </div>
+                <div class="">vimprakasholi@gmail.com</div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mb-2 text-green-700">
+                  <i class="fas fa-phone-square"></i>
+                </div>
+                <div class="">+977-9813456034</div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mb-2 text-green-600">
+                  <i class="fab fa-whatsapp" style="color: #075e54"></i>
+                </div>
+                <div class="">+977-9813456034</div>
+              </div>
+              <div class="flex gap-4">
+                <div class="text-pruple">
+                  <i class="fab fa-viber" style="color: #7360f2"></i>
+                </div>
+                <div class="">+977-9813456034</div>
+              </div>
+            </div>
+            <div
+              class="px-2 py-4 rounded bg-white flex items-center justify-around"
+            >
+              <a
+                href="https://www.linkedin.com/in/bhim-prakash-oli-ab48ba229/"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin-in" style="color: #0a66c2"></i>
+              </a>
+              <a href="https://github.com/vimpoli" target="_blank">
+                <i class="fa-brands fa-github" style="color: #24292e"></i>
+              </a>
+              <a href="https://www.facebook.com/vimp.oli" target="_blank">
+                <i class="fa-brands fa-facebook-f" style="color: #0165e1"></i>
+              </a>
+              <a href="https://www.instagram.com/vimp.oli/" target="_blank">
+                <i class="fa-brands fa-instagram" style="color: #e1306c"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-white text-2xl mb-4">Categories</h3>
+            <ul class="px-2 py-4 bg-white rounded">
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Category 1</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Category 2</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Category 3</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Category 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white text-2xl mb-4">Quick Links</h3>
+            <ul class="px-2 py-4 bg-white rounded">
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Nepal Rastra Bank</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Public Service Comission</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Nepal Law Commission</a>
+              </li>
+              <li class="mb-2 text-secondary hover:text-primary">
+                <a href="#">Gorkhapatra Online</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white text-2xl mb-4">You can reach through</h3>
+            <form class="flex flex-col gap-4" action="#" method="POST">
+              <input
+                name="name"
+                class="bg-white px-3 text-secondary text-md rounded py-1 focus:outline-none"
+                type="text"
+                placeholder="Full name"
+                required
+              />
+              <input
+                name="email"
+                class="bg-white px-3 text-secondary text-md rounded py-1 focus:outline-none"
+                type="email"
+                placeholder="Email address"
+                required
+              />
+              <textarea
+                name="message"
+                class="bg-white px-3 text-secondary text-md rounded py-1 focus:outline-none"
+                type="text"
+                placeholder="Your message"
+                required
+              ></textarea>
+              <div>
+                <button
+                  type="submit"
+                  name="send_msg_btn"
+                  class="border border-secondary bg-white text-secondary hover:bg-white/30 hover:text-white transition rounded-lg px-4 py-1 w-full"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="text-white/60 text-center">
+          <p class="text-sm">
+            Copyright &copy;2025
+            <span class="uppercase font-semibold">bp-oli</span> &mid; All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom JS  -->
+    <script src="assets/js/categoryToggle.js"></script>
+    <script src="assets/js/navbarToggle.js"></script>
+    <script src="assets/js/detailCardToggle.js"></script>
+  </body>
+</html>
